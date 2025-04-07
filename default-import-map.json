@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@me/host": "/stuff/fixed",
+    "@me/module-a": "https://my-host/module-a/1.2.3/asdf998.js",
+    "@me/module-b": "https://my-host/module-b/4.6.1/jiu639.js",
+    "@me/module-c": "https://my-host/module-c/2.8.3/tuv123.js"
+  }
+}

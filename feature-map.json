@@ -1,0 +1,9 @@
+{
+  "feature-omega": {
+    "@me/module-a": "1.3.0/beta123.js",
+    "@me/module-c": "2.9.0/gamma456.js"
+  },
+  "feature-alpha": {
+    "@me/module-b": "3.0.0-beta/test789.js"
+  }
+}
