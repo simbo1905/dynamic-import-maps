@@ -22,5 +22,3 @@ Deno.test("Server returns 404 for unknown paths", async () => {
   assertEquals(response.status, 404);
 });
 
-// Close server after tests
-server.close();
