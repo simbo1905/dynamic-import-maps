@@ -17,10 +17,10 @@ export async function handler(req: Request) {
     }
     return new Response("Not Found", { status: 404 });
   } catch (error) {
-    return new Response(`Error reading import map: ${error.message}`, {
+    return new Response(`Error reading import map: ${error instanceof Error ? error.message : "Unknown error"}`, {
       status: 500,
     });
   }
 }
 
-serve({ port: 8000, handler });
+serve({ addr: "localhost:8000", handler });

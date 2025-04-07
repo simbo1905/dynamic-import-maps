@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import { readTextFileSync } from "https://deno.land/std/fs/mod.ts";
+import { readTextFileSync } from "https://deno.land/std@0.224.0/fs/mod.ts";
 
 // Import the server handler
 import { handler } from "../server.ts";
