@@ -48,6 +48,14 @@ An example feature map is:
 
 ## Usage
 
+This codebase was written and tested with:
+
+```text
+deno 2.2.8 (stable, release, aarch64-apple-darwin)
+v8 13.5.212.10-rusty
+typescript 5.7.3
+```
+
 Start the server with
 
 ```shell
@@ -64,6 +72,12 @@ Access the import map with an override with:
 
 ```shell
 curl -X GET -H "X-Feature-Flag: feature-omega" http://localhost:8000/my-app/import-map.json
+```
+
+To run the tests:
+
+```shell
+deno test --allow-net --allow-read tests/*
 ```
 
 End
