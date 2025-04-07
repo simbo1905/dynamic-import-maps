@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { handler } from "../server.ts";
-import { readTextFile } from "https://deno.land/std@0.224.0/fs/mod.ts";
+import { readTextFile } from "https://deno.land/std@0.224.0/fs/read_text_file.ts";
 
 Deno.test("Server returns import map", async () => {
   const req = new Request("http://localhost:8000/my-app/import-map.json");
