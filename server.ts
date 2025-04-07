@@ -1,31 +1,10 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
-const DEFAULT_IMPORT_MAP_PATH = "default-import-map.json";
-const IMPORT_MAP_PATH = "/my-app/import-map.json";
-
-export async function handler(req: Request) {
-  if (req.method === "GET" && req.url === IMPORT_MAP_PATH) {
-    try {
-      const importMap = Deno.readTextFileSync(DEFAULT_IMPORT_MAP_PATH);
-      return new Response(importMap, {
-        headers: {
-          "content-type": "application/json"
-        }
-      });
-    } catch (error) {
-      return new Response("Internal Server Error", { status: 500 });
-    }
-  }
-  return new Response("Not Found", { status: 404 });
-}
-
-serve(handler, { port: 8000 });
-import { serve } from "https://deno.land/std/http/server.ts";
-
 // Constants
 const FEATURE_FLAG_HEADER = "X-Feature-Flag";
 const DEFAULT_IMPORT_MAP_PATH = "./default-import-map.json";
 const FEATURE_MAP_PATH = "./feature-map.json";
+const IMPORT_MAP_PATH = "/my-app/import-map.json";
 
 // Types
 interface ImportMap {
@@ -96,7 +75,7 @@ export async function handler(req: Request): Promise<Response> {
   const url = new URL(req.url);
   
   // Only handle requests for import-map.json
-  if (url.pathname.endsWith("/import-map.json")) {
+  if (url.pathname === IMPORT_MAP_PATH) {
     try {
       // Read the default import map
       const defaultImportMap = await readJsonFile<ImportMap>(DEFAULT_IMPORT_MAP_PATH);
@@ -137,5 +116,5 @@ export async function handler(req: Request): Promise<Response> {
 // Start the server if this file is run directly
 if (import.meta.main) {
   console.log("Starting import map server on http://localhost:8000");
-  await serve(handler, { port: 8000 });
+  serve(handler, { port: 8000 });
 }
