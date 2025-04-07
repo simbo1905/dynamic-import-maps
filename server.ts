@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
 const DEFAULT_IMPORT_MAP_PATH = "default-import-map.json";
-const IMPORT_MAP_PATH = "/my-app/import-map.json";
+const IMPORT_MAP_PATH = "/import-map.json";
 
 // Basic server to serve the default import map
 export async function handler(req: Request) {
@@ -24,4 +24,4 @@ export async function handler(req: Request) {
 }
 
 // Updated serve API - handler function comes first, then options
-serve(handler, { port: 8000, hostname: "localhost" });
+serve(handler, { port: 8000 });
