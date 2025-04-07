@@ -48,7 +48,7 @@ An example feature map is:
 
 ## Usage
 
-Start the server with 
+Start the server with
 
 ```shell
 deno run --allow-net --allow-read server.ts
