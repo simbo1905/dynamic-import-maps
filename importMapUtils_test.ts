@@ -1,5 +1,3 @@
-import { assertEquals } from "https://deno.land/std@0.224.0/assert/assert_equals.ts";
-import { ImportMap, FeatureMap, mergeImportMaps } from "./importMapUtils.ts";
 
 Deno.test("mergeImportMaps - returns default map when feature map is empty", () => {
   // Arrange
