@@ -60,7 +60,7 @@ Access the import map no overrides with:
 curl -X GET http://localhost:8000/my-app/import-map.json
 ```
 
-Access the imort map with an override with:
+Access the import map with an override with:
 
 ```shell
 curl -X GET -H "X-Feature-Flag: feature-omega" http://localhost:8000/my-app/import-map.json
