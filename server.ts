@@ -7,7 +7,7 @@ export async function handler(req: Request) {
   console.log("Incoming request:", req.url);
   console.log("Checking if path matches:", IMPORT_MAP_PATH);
   
-  if (req.method === "GET" && req.url.pathname === IMPORT_MAP_PATH) {
+  if (req.method === "GET" && req.url === IMPORT_MAP_PATH) {
     console.log("Serving import map from:", DEFAULT_IMPORT_MAP_PATH);
     try {
       const importMap = Deno.readTextFileSync(DEFAULT_IMPORT_MAP_PATH);
