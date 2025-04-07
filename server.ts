@@ -23,4 +23,5 @@ export async function handler(req: Request) {
   }
 }
 
-serve({ port: 8000, hostname: "localhost" });
+// Updated serve API - handler function comes first, then options
+serve(handler, { port: 8000, hostname: "localhost" });
