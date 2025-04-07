@@ -5,6 +5,7 @@ const IMPORT_MAP_PATH = "/my-app/import-map.json";
 
 // Basic server to serve the default import map
 export async function handler(req: Request) {
+  console.log("Handling request:", req.url);
   try {
     if (req.method === "GET" && req.url === IMPORT_MAP_PATH) {
       const importMap = Deno.readTextFileSync(DEFAULT_IMPORT_MAP_PATH);
