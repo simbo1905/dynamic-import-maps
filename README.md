@@ -48,8 +48,22 @@ An example feature map is:
 
 ## Usage
 
-1. Start the server with `deno run --allow-net --allow-read server.ts`
-2. Access the import map no overrides with `GET http://localhost:8000/import-map.json`
-3. Access the imort map with an override with  `GET http://localhost:8000/import-map.json` with header `X-Feature-Flag: feature-omega`
+Start the server with 
 
-End.
+```shell
+deno run --allow-net --allow-read server.ts
+```
+
+Access the import map no overrides with:
+
+```shell
+curl -X GET http://localhost:8000/my-app/import-map.json
+```
+
+Access the imort map with an override with:
+
+```shell
+curl -X GET -H "X-Feature-Flag: feature-omega" http://localhost:8000/my-app/import-map.json
+```
+
+End
